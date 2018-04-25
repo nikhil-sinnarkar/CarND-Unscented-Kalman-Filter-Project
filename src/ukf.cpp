@@ -301,7 +301,7 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
   P_ = (I - K * H_) * P_;
 
   double NIS_laser_ = 0.0;
-  NIS_laser_ = z_diff.transpose() * S.inverse() * z_diff;
+  NIS_laser_ = y.transpose() * S.inverse() * y;
   cout << "NIS Lidar ---> "<< NIS_laser_ << endl;
   
 }
